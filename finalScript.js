@@ -1,7 +1,5 @@
 import { initialTasks } from "./initialData.js";
 
-let tasks = document.querySelector(".tasks-container");
-
 initialTasks.forEach(task => {
   //create a html div for tasks
   const taskDiv = document.createElement('div');
@@ -29,6 +27,7 @@ const taskModal = document.querySelector('.task-modal');
 const titleInput = document.getElementById('task-title');
 const descriptionInput = document.getElementById('task-description');
 const statusSelect = document.getElementById('select-status');
+const backdrop = document.getElementById('modal-backdrop');
 
 function showModal(task) {
   // Populate modal fields with task details from initialTasks
@@ -36,12 +35,14 @@ function showModal(task) {
   descriptionInput.value = task.description;
   statusSelect.value = task.status;
 
-  // Show modal
+  // Show modal and backdrop
   taskModal.classList.remove('modal-hidden');
+  backdrop.classList.remove('modal-hidden');
 }
 
 const closeIcon = document.getElementById('close-Icon');
 
 closeIcon.addEventListener('click', function() {
     taskModal.classList.add('modal-hidden');
+    backdrop.classList.add('modal-hidden');
 });
