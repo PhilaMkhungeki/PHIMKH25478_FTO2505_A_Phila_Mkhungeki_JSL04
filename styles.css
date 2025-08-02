@@ -229,6 +229,87 @@ h2 {
   margin: 0;
 }
 
+  /* Modal displaying */
+  .task-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  .modal-hidden{
+    display: none;
+  }
+
+  .modal-container {
+    background-color: #ffffff;
+    height: 300px;
+    width: 350px;
+    padding: 20px;
+  }
+
+  .modal-container img {
+    width: 25px;
+    float: inline-end;
+  }
+
+  .modal-container h2{
+    margin-bottom: 18px;
+  }
+
+  .modal-container label {
+    color: #828FA3;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  .title {
+    display: grid;
+  }
+
+  .title input {
+    border-radius: 5px;
+    border: solid 1px rgb(216, 215, 215);
+    height: 30px;
+    padding: 5px;
+  }
+
+  .description {
+    display: grid;
+  }
+
+  .description textarea {
+    border-radius: 5px;
+    border: solid 1px rgb(216, 215, 215);
+    height: 60px;
+  }
+
+  .status {
+    display: grid;
+  }
+
+  .status select {
+    border-radius: 5px;
+    border: solid 1px rgb(216, 215, 215);
+    height: 30px;
+    padding: 5px;
+  }
+
+  .status select option{
+    color: #828FA3;
+    
+  }  
+
+  .status select option:hover{
+    color: #000000;
+  }
+
 /* ========================
    Responsive Styles
 ======================== */
