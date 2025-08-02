@@ -7,6 +7,7 @@ initialTasks.forEach(task => {
   taskDiv.textContent = task.title; // Set the text inside the div to the title of the task object.
 
   let container;  //variable to refer where a task should be displayed
+  
     // Find the correct column based on status
   if (task.status === "todo") {
     container = document.querySelector('[data-status="todo"] .tasks-container');
@@ -18,7 +19,7 @@ initialTasks.forEach(task => {
 
   container.appendChild(taskDiv);
 
-  //add an event listener to the task 
+  //add an event listener to the task to show task details in a modal
   taskDiv.addEventListener('click', () => showModal(task));
 });
 
@@ -29,6 +30,10 @@ const descriptionInput = document.getElementById('task-description');
 const statusSelect = document.getElementById('select-status');
 const backdrop = document.getElementById('modal-backdrop');
 
+/**
+ * Populate modal fields with task details and shows the modal
+ * @param {object} task - the task's details to display
+ */
 function showModal(task) {
   // Populate modal fields with task details from initialTasks
   titleInput.value = task.title;
